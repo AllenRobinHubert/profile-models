@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- Add a native manifest and move the unchanged desktop bundle to desktop/plugin.js for catalog admission.
+- Add minimum Hermes compatibility metadata and explicit configuration-access disclosures.
+
 ## 1.0.0
 
 - Initial shareable source release with MIT license and installation instructions.

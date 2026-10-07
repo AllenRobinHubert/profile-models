@@ -1,5 +1,5 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const source=fs.readFileSync(path.join(__dirname,'../plugin.js'),'utf8').replace(/^import .*\n/gm,'').replace('export default {','const plugin = {');
+const source=fs.readFileSync(path.join(__dirname,'../desktop/plugin.js'),'utf8').replace(/^import .*\n/gm,'').replace('export default {','const plugin = {');
 let request;
 const sandbox={host:{requestProfile:async(...args)=>{request=args;return {config:{model:{default:'main',provider:'openrouter'}}}}},Map};
 vm.createContext(sandbox);vm.runInContext(source+'\nthis.parse=parseConfig;this.group=groupModels;this.fetch=fetchModels;',sandbox);
